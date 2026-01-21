@@ -1,6 +1,20 @@
 import * as vscode from 'vscode';
 import WebSocket from 'ws';
 import * as fs from 'fs';
+import * as os from 'os';
+
+function getMacAddress(): string | null {
+    const interfaces = os.networkInterfaces();
+
+    for (const name of Object.keys(interfaces)) {
+        for (const net of interfaces[name] || []) {
+            if (!net.internal && net.mac && net.mac !== '00:00:00:00:00:00') {
+                return net.mac;
+            }
+        }
+    }
+    return null;
+}
 
 export function activate(context: vscode.ExtensionContext) {
     const provider = new MyPanelViewProvider(context.extensionUri);
@@ -40,6 +54,9 @@ class MyPanelViewProvider implements vscode.WebviewViewProvider {
         // Connect sockets
         this.connectChatSocket(this.default_chat_ws_url);
         this.connectGameSocket(this.default_game_ws_url);
+
+        const mac = getMacAddress();
+        console.log('MAC Address:', mac);
 
         // Reset unread counter when tab becomes visible
         webviewView.onDidChangeVisibility(() => {
