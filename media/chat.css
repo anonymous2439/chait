@@ -141,3 +141,22 @@ html, body {
     text-align: center;
     margin: 2px 0;
 }
+
+#game-drawer-lock {
+    position: sticky;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 12px;
+    height: 100vh;
+    background: #ffffff1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    transition: .4s;
+}
+
+#game-drawer-lock:hover {
+    background: #ffffff5a;
+}

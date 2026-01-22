@@ -1,6 +1,6 @@
 const vscode = acquireVsCodeApi();
 const textbox = document.getElementById('textbox');
-const msgContainer = document.getElementById('msg-users');
+const msgContainer = document.getElementById('msg-content');
 const wsSelect = document.getElementById('ws-select');
 const gameContainer = document.getElementById('game-con');
 const startBtn = document.getElementById('karirs-start');
