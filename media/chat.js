@@ -7,6 +7,7 @@ const startBtn = document.getElementById('karirs-start');
 const stopBtn = document.getElementById('karirs-stop');
 const changeBtn = document.getElementById('karirs-change');
 const countdownEl = document.getElementById('countdown');
+const msgEl = document.getElementById('msg');
 
 // Receive messages from extension
 window.addEventListener('message', event => {
@@ -116,6 +117,15 @@ window.addEventListener('click', (e) => {
                 action: "change"
             }
         });
+    }
+    else if(e.target.id === 'game-drawer-lock') {
+        const isUnlocked = msgEl.classList.contains('unlocked');
+
+        if (isUnlocked) {
+            msgEl.classList.remove('unlocked');
+        } else {
+            msgEl.classList.add('unlocked');
+        }
     }
 });
 

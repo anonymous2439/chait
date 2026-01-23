@@ -17,10 +17,9 @@ html, body {
     font-weight: 300;
     font-size: 10px;
     line-height: 100%;
-    padding-left: 10px;
     position: relative;
     display: flex;
-    height: calc(100% - 50px);
+    height: calc(100% - 44px);
 }
 
 .msg-options {
@@ -39,12 +38,12 @@ html, body {
     transition: .6s;
 }
 
-#msg:hover .msg-options{
+#msg.unlocked:hover .msg-options{
     width: 578px;
     opacity: 1;
 }
 
-#msg:hover #msg-users {
+#msg.unlocked:hover #msg-users {
     width: calc(100% - 578px);
 }
 
@@ -74,6 +73,10 @@ html, body {
     padding: 2px 12px;
 }
 
+.msg-options ul li button:hover {
+    box-shadow: 2px 2px 8px 1px #ffffff6a;
+}
+
 #karir-options {
     display: flex;
     gap: 6px;
@@ -88,7 +91,6 @@ html, body {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding-left: 10px;
     transition: .6s;
 }
 
@@ -159,4 +161,8 @@ html, body {
 
 #game-drawer-lock:hover {
     background: #ffffff5a;
+}
+
+#msg-content {
+    margin: 0 10px 0 22px;
 }
