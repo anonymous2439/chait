@@ -1,6 +1,7 @@
 const vscode = acquireVsCodeApi();
 const textbox = document.getElementById('textbox');
-const msgContainer = document.getElementById('msg-content');
+const msgContainer = document.getElementById('msg-users');
+const msgContent = document.getElementById('msg-content');
 const wsSelect = document.getElementById('ws-select');
 const gameContainer = document.getElementById('game-con');
 const startBtn = document.getElementById('karirs-start');
@@ -17,7 +18,7 @@ window.addEventListener('message', event => {
         const p = document.createElement('p');
         const messageData = JSON.parse(msg.data);
         p.innerHTML = `<span class="user-label">${messageData.user}</span>: ${messageData.message}`;
-        msgContainer.appendChild(p);
+        msgContent.appendChild(p);
         msgContainer.scrollTop = msgContainer.scrollHeight;
     }
     else if(msg.type === 'karirs') {
@@ -81,7 +82,7 @@ wsSelect.addEventListener('change', () => {
     const url = wsSelect.value;
     if (!url) return;
 
-    msgContainer.innerHTML = '';
+    msgContent.innerHTML = '';
     vscode.postMessage({
         type: 'switchSession',
         url
