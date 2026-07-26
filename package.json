@@ -2,7 +2,7 @@
   "name": "chait",
   "displayName": "Chait",
   "description": "VS Code extension with a custom bottom panel tab",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "engines": {
     "vscode": "^1.108.1"
   },
