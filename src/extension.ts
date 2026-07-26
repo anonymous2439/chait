@@ -41,8 +41,8 @@ class MyPanelViewProvider implements vscode.WebviewViewProvider {
     private gameSocket?: WebSocket;
 
     private unread_count = 0;
-    private default_chat_ws_url = 'ws://45.77.242.28/api/chat/ws/439';
-    private default_game_ws_url = 'ws://45.77.242.28/karirs/';
+    private default_chat_ws_url = 'ws://109.123.234.69/api/chat/ws/439';
+    private default_game_ws_url = 'ws://109.123.234.69/karirs/';
 
     constructor(private readonly extensionUri: vscode.Uri) {}
 
